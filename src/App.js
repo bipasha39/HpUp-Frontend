@@ -19,7 +19,7 @@ function App() {
         <Grid minH="100vh" p={3}>
           <ColorModeSwitcher justifySelf="flex-end" />
           <VStack spacing={8}>
-           <h1> HR management </h1>
+           <h1> HR management System</h1>
           </VStack>
         </Grid>
       </Box>
