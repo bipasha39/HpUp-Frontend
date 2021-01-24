@@ -1,16 +1,14 @@
 import React from 'react';
+
 import {
   ChakraProvider,
   Box,
-  Text,
-  Link,
   VStack,
-  Code,
   Grid,
   theme,
 } from '@chakra-ui/react';
 import { ColorModeSwitcher } from './ColorModeSwitcher';
-
+import Login from "./pages/login/Login";
 
 function App() {
   return (
@@ -19,7 +17,9 @@ function App() {
         <Grid minH="100vh" p={3}>
           <ColorModeSwitcher justifySelf="flex-end" />
           <VStack spacing={8}>
-           <h1> HR management System</h1>
+          
+           
+           <Login />
           </VStack>
         </Grid>
       </Box>
