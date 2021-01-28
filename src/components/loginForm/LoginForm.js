@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import {
   FormControl,
   FormLabel,
@@ -13,11 +13,20 @@ import {
   Stack,
   Heading,
   Divider,
+  Container,
+  Center
 } from '@chakra-ui/react';
 
 export default function LoginForm() {
+  const [email, setEmail] = useState("");
+  const[password,setPassword] = useState("");
+  const handleSubmit = ()=>{
+    console.log("logged in as",email,password)
+  }
   return (
-    <div className="loginForm_container">
+    <Center h="80vh">
+   <Container >
+     
       <Heading
         as="h1"
         textAlign="center"
@@ -32,8 +41,11 @@ export default function LoginForm() {
           <FormControl isRequired>
             <FormLabel>Email address</FormLabel>
             <InputGroup>
-             
-              <Input type="email" placeholder="Email" aria-label="Email" />
+              <Input type="email" 
+              value={email} 
+              onChange={(event) => setEmail(event.target.value)}
+              placeholder="Email" 
+              aria-label="Email" />
             </InputGroup>
           </FormControl>
 
@@ -41,6 +53,8 @@ export default function LoginForm() {
             <FormLabel>Password</FormLabel>
             <InputGroup>
               <Input
+              value={password} 
+              onChange={(event) => setPassword(event.target.value)}
                 type="password"
                 placeholder="Password"
                 aria-label="Password"
@@ -59,16 +73,16 @@ export default function LoginForm() {
           <Divider />
         </Stack>
       </form>
-     
         <flex>
           <Box>
             <a href="#">Forget password</a>
           </Box>
         </flex>
-     
-      <Button justifiying content ="center" variantColor="blue" type="submit" shadow="md">
+      <Button  variantColor="blue" onClick={handleSubmit} shadow="md">
+
         Login
-      </Button>
-    </div>
+      </Button>   
+    </Container>
+    </Center>
   );
 }

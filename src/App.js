@@ -3,7 +3,9 @@ import React from 'react';
 import {
   ChakraProvider,
   theme,
-  VStack,
+  Box,
+  Center,
+  VStack
 
 } from '@chakra-ui/react';
 
@@ -17,17 +19,15 @@ import Login from "./pages/login/Login";
 function App() {
   return (
     <ChakraProvider theme={theme}>
-      <VStack>
      
-      
-          <ColorModeSwitcher justifySelf="flex-end" />
-          
-          
-           <Login />
-          
+     <Box minH="100vh" >
+    
+     <Login />
+   
+       </Box>         
         
-      
-      </VStack>
+          
+     
     </ChakraProvider>
   );
 }

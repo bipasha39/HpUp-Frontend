@@ -3,6 +3,7 @@ import LoginForm from '../../components/loginForm/LoginForm';
 
 import Header from '../../components/header/Header';
 import './login.css';
+import { VStack } from '@chakra-ui/react';
 
 
 export default function Login() {  
@@ -16,7 +17,7 @@ export default function Login() {
           <div className="login_page_loginForm">
          <LoginForm />
          </div>       
-     
+         
         </div>
          
     );
