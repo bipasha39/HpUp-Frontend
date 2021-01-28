@@ -2,27 +2,32 @@ import React from 'react';
 
 import {
   ChakraProvider,
-  Box,
-  VStack,
-  Grid,
   theme,
+  VStack,
+
 } from '@chakra-ui/react';
+
+
+
 import { ColorModeSwitcher } from './ColorModeSwitcher';
 import Login from "./pages/login/Login";
+// import SignUp from "./pages/signUp/SignUp";
+
 
 function App() {
   return (
     <ChakraProvider theme={theme}>
-      <Box textAlign="center" fontSize="xl">
-        <Grid minH="100vh" p={3}>
+      <VStack>
+     
+      
           <ColorModeSwitcher justifySelf="flex-end" />
           
           
-           
            <Login />
           
-        </Grid>
-      </Box>
+        
+      
+      </VStack>
     </ChakraProvider>
   );
 }

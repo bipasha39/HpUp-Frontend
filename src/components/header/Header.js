@@ -6,7 +6,7 @@ import { Flex, Spacer,Button,Box,Heading } from "@chakra-ui/react"
 export default function Header() {  
 
     return (
-        <Flex>
+        <div className="header_container">
   <Box p="2">
     <Heading size="md">HrUp</Heading>
   </Box>
@@ -17,8 +17,9 @@ export default function Header() {
     </Button>
     <Button colorScheme="teal">Log in</Button>
   </Box>
-</Flex>
+</div>
           
     );
+            
     
 }
