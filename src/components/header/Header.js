@@ -8,14 +8,17 @@ export default function Header() {
     return (
         <div className="header_container">
   <Box p="2">
-    <Heading size="md">HrUp</Heading>
+  <Button colorScheme="#192A3E" size="lg" fontSize="50px">
+      HrUp
+    </Button>
+    {/* <Heading colorScheme="tomato" size="lg" fontSize="50px">HrUp</Heading> */}
   </Box>
   <Spacer />
   <Box>
-    <Button colorScheme="teal" mr="4">
+    <Button colorScheme="#1B2F44" mr="4">
       Sign Up
     </Button>
-    <Button colorScheme="teal">Log in</Button>
+    <Button colorScheme="#1B2F44">Log in</Button>
   </Box>
 </div>
           

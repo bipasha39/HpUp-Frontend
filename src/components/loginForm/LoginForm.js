@@ -14,7 +14,8 @@ import {
   Heading,
   Divider,
   Container,
-  Center
+  Center,
+  Spacer 
 } from '@chakra-ui/react';
 
 export default function LoginForm() {
@@ -65,7 +66,7 @@ export default function LoginForm() {
                   variant="ghost"
                   size="sm"
                   onClick={handleToggle}
-                  title={`${showPass ? 'Hide' : 'Show'} Password`}
+                  title={`${showPass ? 'Hide' : 'Show' } Password`}
                 />
               </InputRightElement>
             </InputGroup>
@@ -73,15 +74,15 @@ export default function LoginForm() {
           <Divider />
         </Stack>
       </form>
-        <flex>
-          <Box>
-            <a href="#">Forget password</a>
-          </Box>
-        </flex>
-      <Button  variantColor="blue" onClick={handleSubmit} shadow="md">
-
+        <flex  >
+          <Box >
+            <a href="#" colorScheme="blue">Forget password ?</a>
+          <Button  colorScheme="blue" size="lg" onClick={handleSubmit} >
         Login
-      </Button>   
+      </Button>
+      </Box>
+      </flex>
+         
     </Container>
     </Center>
   );
