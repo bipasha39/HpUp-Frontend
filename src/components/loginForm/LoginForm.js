@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, { useState } from 'react';
 import {
   FormControl,
   FormLabel,
@@ -8,26 +8,25 @@ import {
   InputRightElement,
   showPass,
   IconButton,
-  handleToggle,
+  handleClick,
   Button,
   Stack,
   Heading,
   Divider,
   Container,
   Center,
-  Spacer 
+  Spacer,
+  show,
 } from '@chakra-ui/react';
 
 export default function LoginForm() {
-  const [email, setEmail] = useState("");
-  const[password,setPassword] = useState("");
-  const handleSubmit = ()=>{
-    console.log("logged in as",email,password)
-  }
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+  const handleSubmit = () => {
+    console.log('logged in as', email, password);
+  };
   return (
-    <Center h="80vh">
-   <Container >
-     
+    <Container>
       <Heading
         as="h1"
         textAlign="center"
@@ -42,11 +41,13 @@ export default function LoginForm() {
           <FormControl isRequired>
             <FormLabel>Email address</FormLabel>
             <InputGroup>
-              <Input type="email" 
-              value={email} 
-              onChange={(event) => setEmail(event.target.value)}
-              placeholder="Email" 
-              aria-label="Email" />
+              <Input
+                type="email"
+                value={email}
+                onChange={event => setEmail(event.target.value)}
+                placeholder="Email"
+                aria-label="Email"
+              />
             </InputGroup>
           </FormControl>
 
@@ -54,36 +55,32 @@ export default function LoginForm() {
             <FormLabel>Password</FormLabel>
             <InputGroup>
               <Input
-              value={password} 
-              onChange={(event) => setPassword(event.target.value)}
+                value={password}
+                onChange={event => setPassword(event.target.value)}
                 type="password"
                 placeholder="Password"
                 aria-label="Password"
               />
-              <InputRightElement>
-                <IconButton
-                  icon={showPass ? 'hide' : 'show'}
-                  variant="ghost"
-                  size="sm"
-                  onClick={handleToggle}
-                  title={`${showPass ? 'Hide' : 'Show' } Password`}
-                />
-              </InputRightElement>
+             
+                <InputRightElement width="4.5rem">
+                  <Button h="1.75rem" size="sm" onClick={handleClick}>
+                    {show ? 'Hide' : 'Show'}
+                  </Button>
+                </InputRightElement>
+              
             </InputGroup>
           </FormControl>
-          <Divider />
         </Stack>
+        <Divider />
       </form>
-        <flex  >
-          <Box >
-            <a href="#" colorScheme="blue">Forget password ?</a>
-          <Button  colorScheme="blue" size="lg" onClick={handleSubmit} >
-        Login
-      </Button>
+      <Box display="flex" p="4" justifyContent="space-between">
+        <a color="blue" href="#" >
+          Forget password ?
+        </a>
+        <Button colorScheme="blue" size="lg" variant="solid" onClick={handleSubmit}>
+          Login
+        </Button>
       </Box>
-      </flex>
-         
     </Container>
-    </Center>
   );
 }

@@ -1,24 +1,18 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 import LoginForm from '../../components/loginForm/LoginForm';
 import Header from '../../components/header/Header';
 import './login.css';
 
-import { VStack } from '@chakra-ui/react';
+import { Box,Container, VStack } from '@chakra-ui/react';
 
+export default function Login() {
+  return (
+    <Fragment>
+      <Header />
 
-export default function Login() {  
-
-    return (
-        
-        <div>
-            <div className="login_page_loginButton">
-            <Header />
-            </div>
-          <div className="login_page_loginForm">
-         <LoginForm />
-         </div>       
-         
-        </div>
-         
-    );
+      <Box display="flex" flex="2" alignItems="center" justifyContent="center">
+        <LoginForm />
+      </Box>
+    </Fragment>
+  );
 }

@@ -20,7 +20,7 @@ function App() {
   return (
     <ChakraProvider theme={theme}>
      
-     <Box minH="100vh" >
+     <Box minH="100vh" display="flex" flexDirection="column" >
     
      <Login />
    
