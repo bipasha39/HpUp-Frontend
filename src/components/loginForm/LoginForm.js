@@ -74,9 +74,10 @@ export default function LoginForm() {
         <Divider />
       </form>
       <Box display="flex" p="4" justifyContent="space-between">
-        <a color="blue" href="#" >
+        <a href="#" >
           Forget password ?
         </a>
+        
         <Button colorScheme="blue" size="lg" variant="solid" onClick={handleSubmit}>
           Login
         </Button>
