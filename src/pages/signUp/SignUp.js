@@ -1,16 +1,15 @@
 import React, { Fragment } from 'react';
-import LoginForm from '../../components/loginForm/LoginForm';
+import SignUpForm from '../../components/signUpForm/SignUpForm';
 import Header from '../../components/header/Header';
-import './login.css';
 
 import { Box } from '@chakra-ui/react';
 
-export default function Login() {
+export default function SignUp() {
   return (
     <Fragment>
       <Header />
       <Box display="flex" flex="2" alignItems="center" justifyContent="center">
-        <LoginForm />
+        <SignUpForm />
       </Box>
     </Fragment>
   );

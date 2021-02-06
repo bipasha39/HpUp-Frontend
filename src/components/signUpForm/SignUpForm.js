@@ -1,26 +1,55 @@
-import React from 'react';
+import React, { useState } from 'react';
 import {
   FormControl,
   FormLabel,
   Input,
   Box,
   InputGroup,
-  Icon,
-  InputLeftElement,
   InputRightElement,
-  showPass,
-  IconButton,
-  handleToggle,
+  handleClick,
   Button,
   Stack,
   Heading,
   Divider,
-  Checkbox,
+  Container,
+  Select,
+  show,
 } from '@chakra-ui/react';
 
-export default function SignUpForm() {
+import ErrorMessage from '../ErrorMessage';
+import { userSignUp } from '../../utils/mockApi';
+import {validateSignUp} from '../../utils/validation';
+
+export default function LoginForm() {
+  const [username, setUsername] = useState('');
+  const [company, setCompany] = useState('');
+  const [role, setRole] = useState('');
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+  const [error, setError] = useState('');
+  const [isLoading, setIsLoading] = useState(false);
+
+  const handleSubmit = async event => {
+    event.preventDefault();
+    setIsLoading(true);
+    try {
+      validateSignUp({username,company,role,email,password});
+      await userSignUp({ username, company, role, email, password });
+      setIsLoading(false);
+      setError('');
+    } catch (error) {
+      console.log(error)
+      setError(error);
+      setIsLoading(false);
+      // setUsername('');
+      // setCompany('');
+      // setRole('');
+      // setEmail('');
+      // setPassword('');
+    }
+  };
   return (
-    <div className="SignUpForm_container">
+    <Container>
       <Heading
         as="h1"
         textAlign="center"
@@ -29,93 +58,90 @@ export default function SignUpForm() {
       >
         Sign Up
       </Heading>
-
       <form action="submit">
+        {error && <ErrorMessage message={error} />}
         <Stack spacing={4}>
-        <FormControl isRequired>
+          <FormControl isRequired>
             <FormLabel>User Name</FormLabel>
             <InputGroup>
-              <InputLeftElement children={<Icon name="info" />} />
-              <Input type="name" placeholder="User Name" aria-label="User Name" />
+              <Input
+                value={username}
+                onChange={event => setUsername(event.target.value)}
+                type="name"
+                placeholder="User Name"
+                aria-label="User Name"
+              />
             </InputGroup>
           </FormControl>
 
           <FormControl isRequired>
             <FormLabel>Company Name</FormLabel>
             <InputGroup>
-              <InputLeftElement children={<Icon name="info" />} />
-              <Input type="name" placeholder="Company Name" aria-label="Company Name" />
+              <Input
+                value={company}
+                onChange={event => setCompany(event.target.value)}
+                type="name"
+                placeholder="Company Name"
+                aria-label="Company Name"
+              />
             </InputGroup>
           </FormControl>
-
           <FormControl isRequired>
             <FormLabel>Role</FormLabel>
-            <InputGroup>
-              <InputLeftElement children={<Icon name="info" />} />
-              <Input type="name" placeholder="Role" aria-label="Role" />
-            </InputGroup>
+            <Select
+              placeholder="Role"
+              value={role}
+              onChange={event => setRole(event.target.value)}
+            >
+              <option value="Company">Company</option>
+              <option value="Employee">Employee</option>
+            </Select>
           </FormControl>
-
           <FormControl isRequired>
             <FormLabel>Email address</FormLabel>
             <InputGroup>
-              <InputLeftElement children={<Icon name="email" />} />
-              <Input type="email" placeholder="Email" aria-label="Email" />
+              <Input
+                type="email"
+                value={email}
+                onChange={event => setEmail(event.target.value)}
+                placeholder="Email"
+                aria-label="Email"
+              />
             </InputGroup>
           </FormControl>
 
           <FormControl isRequired>
             <FormLabel>Password</FormLabel>
             <InputGroup>
-              <InputLeftElement children={<Icon name="lock" />} />
               <Input
+                value={password}
+                onChange={event => setPassword(event.target.value)}
                 type="password"
                 placeholder="Password"
                 aria-label="Password"
               />
-              <InputRightElement>
-                <IconButton
-                  icon={showPass ? 'hide' : 'show'}
-                  variant="ghost"
-                  size="sm"
-                  onClick={handleToggle}
-                  title={`${showPass ? 'Hide' : 'Show'} Password`}
-                />
+
+              <InputRightElement width="4.5rem">
+                <Button h="1.75rem" size="sm" onClick={handleClick}>
+                  {show ? 'Hide' : 'Show'}
+                </Button>
               </InputRightElement>
             </InputGroup>
           </FormControl>
-          <Divider />
         </Stack>
+        <Divider />
       </form>
-      <stack justifyContent="space-between">
-        <flex>
-          <Box>
-            <Checkbox>Remember Me</Checkbox>
-          </Box>
-      
-        </flex>
-      </stack>
-      <Button variantColor="blue" type="submit" shadow="md">
-        Sign Up
-      </Button>
-    </div>
+      <Box display="flex" p="4" justifyContent="center">
+        <Button
+          isLoading={isLoading}
+          colorScheme="blue"
+          size="lg"
+          variant="solid"
+          onClick={handleSubmit}
+        >
+          SignUp
+        </Button>
+      </Box>
+    </Container>
   );
 }
-
-
-
-
-//     return (
-//       <form isRequired>
-//         <label>
-//           Role
-//           <select>
-//             <option value="Company">Company</option>
-//             <option value="Employee">Employee</option>
-//           </select>
-//         </label>
-//         <input type="submit" value="Submit" />
-//       </form>
-//     );
-//   }
-// }
