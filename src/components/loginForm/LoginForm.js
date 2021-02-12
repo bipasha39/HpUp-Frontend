@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import {
   FormControl,
-  FormLabel,
   Input,
   Box,
   InputGroup,
@@ -64,7 +63,6 @@ export default function LoginForm() {
         <Stack spacing={4}>
          {error && <ErrorMessage message={error} />}
           <FormControl isRequired>
-            <FormLabel>Email address</FormLabel>
             <InputGroup>
               <Input
                 type="email"
@@ -77,7 +75,6 @@ export default function LoginForm() {
           </FormControl>
 
           <FormControl isRequired>
-            <FormLabel>Password</FormLabel>
             <InputGroup>
               <Input
                 value={password}

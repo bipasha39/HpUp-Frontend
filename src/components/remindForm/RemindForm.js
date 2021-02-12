@@ -9,6 +9,7 @@ import {
   Heading,
   Divider,
   Container,
+  Text,
 } from '@chakra-ui/react';
 import { Link } from 'react-router-dom';
 
@@ -31,19 +32,22 @@ export default function LoginForm() {
       setError('Invalid email');
       setIsLoading(false);
       setEmail('');
-  
     }
   };
   return (
     <Container>
       <Heading
         as="h1"
-        textAlign="center"
         textTransform="uppercase"
         letterSpacing={2}
+        size="xl"
+        isTruncated
       >
         Remind Password
       </Heading>
+      <Text fontSize="xl">
+        Just put your email here, we will send your password to you
+      </Text>
 
       <form action="submit">
         <Stack spacing={4}>

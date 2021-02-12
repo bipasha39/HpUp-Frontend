@@ -7,7 +7,6 @@ import {
   Link
 } from "react-router-dom";
 
-
 import { ChakraProvider, theme, Box } from '@chakra-ui/react';
 
 import { ColorModeSwitcher } from './ColorModeSwitcher';
