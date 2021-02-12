@@ -14,6 +14,9 @@ import {
   Container,
   show
 } from '@chakra-ui/react';
+import {
+  Link
+} from "react-router-dom";
 
 import ErrorMessage from '../ErrorMessage';
 import {userLogin} from '../../utils/mockApi';
@@ -96,9 +99,9 @@ export default function LoginForm() {
         <Divider />
       </form>
       <Box display="flex" p="4" justifyContent="space-between">
-        <a href="#" >
-          Forget password ?
-        </a>
+        <Link to="/remind" >
+        Forget password ?
+        </Link>
         
         <Button isLoading={isLoading} colorScheme="blue" size="lg" variant="solid" onClick={handleSubmit}>
           Login
