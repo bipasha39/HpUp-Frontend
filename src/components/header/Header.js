@@ -1,12 +1,12 @@
 import React from 'react';
+import {
+  Link
+} from "react-router-dom";
 import './header.css';
 import {
-  Flex,
-  Spacer,
   Button,
   Box,
   Heading,
-  Container,
 } from '@chakra-ui/react';
 
 export default function Header() {
@@ -23,10 +23,12 @@ export default function Header() {
         </Heading>
 
         <Box display="flex" alignItems="center">
-          <Button colorScheme="blue" variant="ghost" >
+          <Button as={Link} to="/signup" colorScheme="blue" variant="ghost" >
             Sign Up
           </Button>
-          <Button colorScheme="blue"variant="ghost"  >Log in</Button>
+          <Button as={Link} to="/login"colorScheme="blue"variant="ghost" >
+            Log in
+            </Button>
         </Box>
       </Box>
     </Box>
