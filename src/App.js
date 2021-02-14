@@ -13,6 +13,7 @@ import { ColorModeSwitcher } from './ColorModeSwitcher';
 import Login from './pages/login/Login';
 import SignUp from "./pages/signUp/SignUp";
 import Remind from "./pages/remind/Remind";
+import CompanyDashboard from './pages/companyDashboard/CompanyDashboard';
 
 function App() {
   return (
@@ -31,6 +32,9 @@ function App() {
           </Route>
           <Route path="/remind">
           <Remind />
+          </Route>
+          <Route path ="/dashboard">
+            <CompanyDashboard />
           </Route>
         </Switch>
       </Box>

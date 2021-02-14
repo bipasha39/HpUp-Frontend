@@ -17,10 +17,10 @@ import {
   Link
 } from "react-router-dom";
 
-export default function PanelRight() {
+export default function Dashboard() {
     return(
-        <Container>
-            
-        </Container>
+      <Box flex="1" bg="aqua">
+
+      </Box>
     );
 }

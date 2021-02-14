@@ -19,8 +19,9 @@ import {
 
 export default function PanelLeft() {
     return(
-        <Container>
-            
-        </Container>
+        <Box bg="tomato" width="350px" height="100vh" >
+
+
+        </Box>
     );
 }
