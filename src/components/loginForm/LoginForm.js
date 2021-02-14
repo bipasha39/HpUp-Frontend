@@ -16,9 +16,13 @@ import {
 import {
   Link
 } from "react-router-dom";
+import {
+  ReactDOM
+}from "react-dom";
 
 import ErrorMessage from '../ErrorMessage';
 import {userLogin} from '../../utils/mockApi';
+
 
 export default function LoginForm() {
   const [email, setEmail] = useState('');
@@ -41,8 +45,10 @@ export default function LoginForm() {
          await userLogin({ email, password });
           setIsLoading(false);
           setError ('');
+          // CompanyPanelView.show();
+
       } catch (error) {
-          setError('Invalid username or password');
+          setError(error);
           setIsLoading(false);
           setEmail('');
           setPassword('');
