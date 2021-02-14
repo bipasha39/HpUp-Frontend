@@ -1,7 +1,7 @@
 import React, { Fragment } from 'react';
 import LoginForm from '../../components/loginForm/LoginForm';
 import Header from '../../components/header/Header';
-import './login.css';
+
 
 import { Box } from '@chakra-ui/react';
 

@@ -19,6 +19,7 @@ import {
 
 import ErrorMessage from '../ErrorMessage';
 import {userLogin} from '../../utils/mockApi';
+import CompanyPanelView from '../../pages/companyPanelView/CompanyPanelView';
 
 export default function LoginForm() {
   const [email, setEmail] = useState('');
@@ -41,6 +42,8 @@ export default function LoginForm() {
          await userLogin({ email, password });
           setIsLoading(false);
           setError ('');
+           CompanyPanelView.show();
+
       } catch (error) {
           setError('Invalid username or password');
           setIsLoading(false);
