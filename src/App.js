@@ -14,6 +14,9 @@ import Login from './pages/login/Login';
 import SignUp from "./pages/signUp/SignUp";
 import Remind from "./pages/remind/Remind";
 import CompanyDashboard from './pages/companyDashboard/CompanyDashboard';
+import EmployeeHolidayRequest from './pages/employeeHolidayRequest/EmployeeHolidayRequest';
+import CompanyHolidayApproval from './pages/companyHolidayApproval/CompanyHolidayApproval';
+import EmployeeProfileView from './pages/employeeProfileView/EmployeeProfileView';
 
 function App() {
   return (
@@ -36,6 +39,16 @@ function App() {
           <Route path ="/dashboard">
             <CompanyDashboard />
           </Route>
+          <Route path ="/holiday">
+            <EmployeeHolidayRequest />
+          </Route>
+          <Route path ="/holidaycom">
+            <CompanyHolidayApproval />
+          </Route>
+          <Route path ="/profile">
+            <EmployeeProfileView />
+          </Route>
+          
         </Switch>
       </Box>
     </ChakraProvider>
