@@ -14,6 +14,7 @@ import Login from './pages/login/Login';
 import SignUp from "./pages/signUp/SignUp";
 import Remind from "./pages/remind/Remind";
 import CompanyDashboard from './pages/companyDashboard/CompanyDashboard';
+import CompanyHoliday from './pages/companyHoliday/CompanyHoliday';
 
 function App() {
   return (
@@ -35,6 +36,9 @@ function App() {
           </Route>
           <Route path ="/dashboard">
             <CompanyDashboard />
+          </Route>
+          <Route path ="/holiday">
+            <CompanyHoliday />
           </Route>
         </Switch>
       </Box>
