@@ -29,7 +29,7 @@ const data = [
     companyName: 'Bips',
     role: 'Manager',
     forecast: '50%',
-    recentActivity: '1 hour ago',
+    recentActivity: '2 minutes ago',
   },
   {
     name: 'Lindey Stroud',
@@ -61,7 +61,7 @@ const data = [
     companyName: 'Desktop',
     role: 'Manager',
     forecast: '50%',
-    recentActivity: '1 hour ago',
+    recentActivity: '5 minutes ago',
   },
   {
     name: 'Jones Dermot',
@@ -69,7 +69,7 @@ const data = [
     companyName: 'Laptop',
     role: 'Manager',
     forecast: '50%',
-    recentActivity: '1 hour ago',
+    recentActivity: '55 minutes ago',
   },
   {
     name: 'Martin Merces',
@@ -77,7 +77,7 @@ const data = [
     companyName: 'Zoom',
     role: 'Manager',
     forecast: '50%',
-    recentActivity: '1 hour ago',
+    recentActivity: '5 hour ago',
   },
   {
     name: 'Franz Ferdinand',
@@ -85,13 +85,13 @@ const data = [
     companyName: 'Trello',
     role: 'Manager',
     forecast: '50%',
-    recentActivity: '1 hour ago',
+    recentActivity: '2 hour ago',
   },
   {
     name: 'John Smith',
     email: 'bips@gmail.com',
     companyName: 'Facebook',
-    role: 'Manager',
+    role: 'HR',
     forecast: '50%',
     recentActivity: '1 hour ago',
   },
@@ -99,7 +99,7 @@ const data = [
     name: 'Gullem Gabril',
     email: 'bips@gmail.com',
     companyName: 'Slack',
-    role: 'Manager',
+    role: 'Product Designer',
     forecast: '50%',
     recentActivity: '1 hour ago',
   },
@@ -107,7 +107,7 @@ const data = [
 
 export default function Dashboard() {
   return (
-    <Box display="flex" flexDirection="column" flex="1" bg="#F7FAFC">
+    <Box display="flex" flexDirection="column" flex="1" bg="#EDF2F7">
       <Box p="10" display="flex" flexDirection="row">
         <Box flex="2">
           <InputGroup>

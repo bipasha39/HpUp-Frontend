@@ -1,6 +1,6 @@
 import React, { Fragment } from 'react';
 import PanelLeft from '../../components/panelLeft/PanelLeft';
-import Holiday from '../../components/holiday/Holiday';
+import EmployeeHoliday from '../../components/employeeHoliday/EmployeeHoliday';
 
 
 
@@ -10,7 +10,7 @@ export default function CompanyHoliday() {
   return (
       <Box display="flex"  >
         <PanelLeft />
-        <Holiday />
+        <EmployeeHoliday />
       </Box>
    
   );
