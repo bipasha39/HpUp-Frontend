@@ -33,9 +33,9 @@ const Footer = () => (
   </Box>
 );
 const MenuList = () => (
-  <Box flex="1" p="10px">
-    <MenuItem  icon={<DragHandleIcon />} title="Dashboard"/>
-    <MenuItem icon={<UpDownIcon />} title="Holidays" />
+  <Box  display="flex" flexDirection ="column"flex="1" p="10px">
+    <MenuItem  icon={<DragHandleIcon />} route="/dashboard"title="Dashboard"/>
+    <MenuItem icon={<UpDownIcon />} route="/holidaycom" title="Holidays" />
     <MenuItem icon={<EmailIcon />} title="Email" />
     <MenuItem icon={<InfoOutlineIcon />}title="Contact" />
     <MenuItem icon={<ChatIcon />}title="Chat" />
@@ -46,7 +46,7 @@ const MenuList = () => (
   </Box>
 );
 
-const MenuItem = props => <Box p="10px">
+const MenuItem = props => <Box p="10px" as={Link} to={props.route}>
   {props.icon}
   {props.title}
   
