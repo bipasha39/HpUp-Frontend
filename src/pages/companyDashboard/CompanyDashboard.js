@@ -14,11 +14,20 @@ export default function CompanyPanelView() {
   const [users,setUsers] = useState([]);
    
    useEffect(()=>{
-    getAllUsers().then(value =>{
-      console.log("got all users")
-      setUsers(value)
-    })
-     console.log("done")
+    fetch('http://188.166.50.249/users').then(
+      async response => {
+        const data = await response.json();
+        setUsers(data);
+        console.log("user",users)
+      }
+    ).catch(error => {
+      console.error('There was an error!', error);
+    });
+    // getAllUsers().then(value =>{
+    //   console.log("got all users")
+    //   setUsers(value)
+    // })
+    //  console.log("done")
    },[])
 
   return (
