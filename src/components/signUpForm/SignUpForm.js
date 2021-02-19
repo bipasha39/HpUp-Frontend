@@ -41,7 +41,7 @@ export default function SignUpForm() {
         username: username, 
         password: password,
         basedCountry: "USA",
-        role: "employee",
+        role: role,
         email: email,
         remainingDays: 30,
         companyId: 1,
@@ -117,7 +117,7 @@ export default function SignUpForm() {
               value={role}
               onChange={event => setRole(event.target.value)}
             >
-              <option value="company">Company</option>
+              <option value="employer">Employer</option>
               <option value="employee">Employee</option>
             </Select>
           </FormControl>
