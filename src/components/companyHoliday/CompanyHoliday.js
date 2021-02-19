@@ -1,41 +1,20 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { BellIcon, SearchIcon } from '@chakra-ui/icons';
 import {
   Text,
   Stack,
-  Container,
   Image,
-  bg,
   Button,
-  ButtonGroup,
-  SimpleGrid,
-  FormControl,
-  FormLabel,
-  FormErrorMessage,
-  FormHelperText,
   Flex,
-  Spacer,
   Box,
-  Heading,
   Tabs,
   TabList,
   TabPanels,
   Tab,
   TabPanel,
   InputGroup,
-  email,
-  setEmail,
-  password,
-  setPassword,
-  InputRightElement,
-  handleClick,
-  show,
-  Divider,
-  handleSubmit,
   Input,
-  extendTheme,
   InputLeftElement,
-  PhoneIcon,
 } from '@chakra-ui/react';
 export default function CompanyHoliday() {
   return (

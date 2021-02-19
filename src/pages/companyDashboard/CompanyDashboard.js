@@ -18,7 +18,7 @@ export default function CompanyPanelView() {
       async response => {
         const data = await response.json();
         setUsers(data);
-        console.log("user",users)
+        
       }
     ).catch(error => {
       console.error('There was an error!', error);

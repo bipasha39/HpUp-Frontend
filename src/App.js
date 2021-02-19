@@ -4,12 +4,12 @@ import {
   Switch,
   Route,
   Redirect,
-  Link
+  
 } from "react-router-dom";
 
 import { ChakraProvider, theme, Box } from '@chakra-ui/react';
 
-import { ColorModeSwitcher } from './ColorModeSwitcher';
+import { } from './ColorModeSwitcher';
 import Login from './pages/login/Login';
 import SignUp from "./pages/signUp/SignUp";
 import Remind from "./pages/remind/Remind";

@@ -16,12 +16,9 @@ import {
 import {
   Link, useHistory
 } from "react-router-dom";
-import {
-  ReactDOM
-} from "react-dom";
 
 import ErrorMessage from '../ErrorMessage';
-import { userLogin } from '../../utils/mockApi';
+import {} from '../../utils/mockApi';
 
 
 export default function LoginForm() {
@@ -73,10 +70,10 @@ export default function LoginForm() {
           return Promise.reject(error);
         }
 
-        if (data.role == "employer") {
+        if (data.role === "employer") {
           history.push('/dashboard');
         }
-        if (data.role == "employee") {
+        if (data.role === "employee") {
           history.push('/profile');
         }
 

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, {  } from 'react';
 import {
   Input,
   InputGroup,
@@ -12,17 +12,18 @@ import {
   Td,
   Checkbox,
   Avatar,
-  AvatarBadge,
+
   Menu,
   MenuButton,
   MenuList,
   MenuItem,
   Button,
 } from '@chakra-ui/react';
-import { Link, render } from 'react-router-dom';
+import { } from 'react-router-dom';
 import { SearchIcon, BellIcon, ChevronDownIcon } from '@chakra-ui/icons';
 
 export default function Dashboard(props) {
+  console.log("user",props.users)
   return (
     <Box display="flex" flexDirection="column" flex="1" bg="#EDF2F7">
       <Box p="10" display="flex" flexDirection="row">

@@ -20,10 +20,10 @@ import {
 } from "react-router-dom";
 
 import ErrorMessage from '../ErrorMessage';
-import { userSignUp } from '../../utils/serverApi';
-import {validateSignUp} from '../../utils/validation';
+// import { userSignUp } from '../../utils/serverApi';
+// import {validateSignUp} from '../../utils/validation';
 
-export default function LoginForm() {
+export default function SignUpForm() {
   const [username, setUsername] = useState('');
   const [company, setCompany] = useState('');
   const [role, setRole] = useState('');
@@ -33,26 +33,6 @@ export default function LoginForm() {
   const [isLoading, setIsLoading] = useState(false);
   const history = useHistory();
 
-  // const handleSubmit = async event => {
-  //   event.preventDefault();
-  //   setIsLoading(true);
-  //   try {
-  //     validateSignUp({username,company,role,email,password});
-  //     await userSignUp({ username, company, role, email, password });
-  //     setIsLoading(false);
-  //     setError('');
-  //   } catch (error) {
-  //     console.log(error)
-  //     setError(error);
-  //     setIsLoading(false);
-      // setUsername('');
-      // setCompany('');
-      // setRole('');
-      // setEmail('');
-      // setPassword('');
-  //   }
-    
-  // };
   const fetchSignup = (e) => {
     const requestOptions = {
       method: 'POST',
@@ -71,6 +51,7 @@ export default function LoginForm() {
     fetch('http://188.166.50.249/signup', requestOptions)
       .then(async response => {
         const data = await response.json();
+        console.log("data",data)
 
         if (!response.ok) {
           //const error = (data && data.message) || response.status;
@@ -82,7 +63,7 @@ export default function LoginForm() {
           history.push('/dashboard');
         }
         if (data.role === "employee") {
-          history.push('/profile');
+          history.push({pathname: '/profile', employee:data})
         }
 
       })
