@@ -20,8 +20,6 @@ import {
 } from "react-router-dom";
 
 import ErrorMessage from '../ErrorMessage';
-// import { userSignUp } from '../../utils/serverApi';
-// import {validateSignUp} from '../../utils/validation';
 
 export default function SignUpForm() {
   const [username, setUsername] = useState('');

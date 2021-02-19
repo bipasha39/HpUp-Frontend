@@ -1,7 +1,7 @@
 import React, { useState,useEffect } from 'react';
 import PanelLeft from '../../components/panelLeft/PanelLeft';
 import Dashboard from '../../components/dashboard/Dashboard';
-import {getAllUsers}from "../../utils/mockApi";
+//import {getAllUsers}from "../../utils/mockApi";
 
 // import './CompanyPanelView.css';
 

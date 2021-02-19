@@ -1,4 +1,4 @@
-import React, {  } from 'react';
+import React from 'react';
 import {
   Input,
   InputGroup,
@@ -19,7 +19,6 @@ import {
   MenuItem,
   Button,
 } from '@chakra-ui/react';
-import { } from 'react-router-dom';
 import { SearchIcon, BellIcon, ChevronDownIcon } from '@chakra-ui/icons';
 
 export default function Dashboard(props) {
@@ -68,7 +67,6 @@ export default function Dashboard(props) {
               </Box>
 
               <Th>Email</Th>
-              <Th>Company Name</Th>
               <Th>Role</Th>
               <Th isNumeric>Remaining days</Th>
             </Tr>
@@ -98,7 +96,6 @@ export default function Dashboard(props) {
                 </Td>
                 <Td>{item.username}</Td>
                 <Td>{item.email}</Td>
-                <Td>{item.companyName}</Td>
                 <Td>{item.role}</Td>
                 <Td isNumeric>{item.remainingDays}</Td>
               </Tr>
