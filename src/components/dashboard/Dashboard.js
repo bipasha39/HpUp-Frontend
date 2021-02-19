@@ -53,13 +53,11 @@ export default function Dashboard(props) {
             <Tr>
               <Th>
                 <Checkbox></Checkbox>
-                Name
               </Th>
+              <Th>Username</Th>
               <Th>Email</Th>
-              <Th>Company Name</Th>
               <Th>Role</Th>
-              <Th>Forecast</Th>
-              <Th>Recent Activity</Th>
+              <Th isNumeric>Remaining days</Th>
             </Tr>
           </Thead>
           <Tbody>
@@ -84,11 +82,10 @@ export default function Dashboard(props) {
                     </Box>
                   </Box>
                 </Td>
+                <Td>{item.username}</Td>
                 <Td>{item.email}</Td>
-                <Td>{item.companyName}</Td>
                 <Td>{item.role}</Td>
-                <Td>{item.forecast}</Td>
-                <Td>{item.recentActivity}</Td>
+                <Td isNumeric>{item.remainingDays}</Td>
               </Tr>
             ))}
           </Tbody>
