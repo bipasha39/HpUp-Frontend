@@ -1,23 +1,8 @@
-import React, { useState } from 'react';
-import {
-  FormControl,
-  Input,
-  Box,
-  InputGroup,
-  InputRightElement,
-  handleClick,
-  Button,
-  Flex,
-  Divider,
-  Heading,
-  EditIcon,
-  Avatar,
-  AvatarBadge,
-  Text,
-  show,
-} from '@chakra-ui/react';
+import React, { } from 'react';
+import { Box, Divider, Heading, Avatar } from '@chakra-ui/react';
 import { Link } from 'react-router-dom';
-import { DragHandleIcon,
+import {
+  DragHandleIcon,
   EmailIcon,
   ChatIcon,
   SettingsIcon,
@@ -25,32 +10,34 @@ import { DragHandleIcon,
   ExternalLinkIcon,
   SpinnerIcon,
   InfoOutlineIcon,
-  ArrowRightIcon } from '@chakra-ui/icons'
+  ArrowRightIcon,
+} from '@chakra-ui/icons';
 
 const Footer = () => (
-  <Box  p="10px">
-     <MenuItem  icon={<ArrowRightIcon />} title="Toggle sidebar"/>
+  <Box p="10px">
+    <MenuItem icon={<ArrowRightIcon />} title="Toggle sidebar" />
   </Box>
 );
 const MenuList = () => (
-  <Box  display="flex" flexDirection ="column"flex="1" p="10px">
-    <MenuItem  icon={<DragHandleIcon />} route="/dashboard"title="Dashboard"/>
+  <Box display="flex" flexDirection="column" flex="1" p="10px">
+    <MenuItem icon={<DragHandleIcon />} route="/dashboard" title="Dashboard" />
     <MenuItem icon={<UpDownIcon />} route="/holidaycom" title="Holidays" />
     <MenuItem icon={<EmailIcon />} title="Email" />
-    <MenuItem icon={<InfoOutlineIcon />}title="Contact" />
-    <MenuItem icon={<ChatIcon />}title="Chat" />
-    <MenuItem icon={<ExternalLinkIcon />}title="Deals" />
+    <MenuItem icon={<InfoOutlineIcon />} title="Contact" />
+    <MenuItem icon={<ChatIcon />} title="Chat" />
+    <MenuItem icon={<ExternalLinkIcon />} title="Deals" />
     <Divider />
-    <MenuItem  icon={<SettingsIcon />}title="Setting" />
-    <MenuItem icon={<SpinnerIcon />}title="Logout" />
+    <MenuItem icon={<SettingsIcon />} title="Setting" />
+    <MenuItem icon={<SpinnerIcon />} title="Logout" />
   </Box>
 );
 
-const MenuItem = props => <Box p="10px" as={Link} to={props.route}>
-  {props.icon}
-  {props.title}
-  
-  </Box>;
+const MenuItem = props => (
+  <Box p="10px" as={Link} to={props.route}>
+    {props.icon}
+    {props.title}
+  </Box>
+);
 
 const Profile = () => (
   <Box p="10px" flexDirection="row" display="flex">
