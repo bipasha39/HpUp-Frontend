@@ -28,31 +28,6 @@ export default function LoginForm() {
   const [isLoading, setIsLoading] = useState(false);
   const history = useHistory();
 
-  // const userLogin = async ({ email, password })=>{
-  //   if (email == 'abc@gmail.com'&& password =='123'){
-  //     console.log('login')
-  //     return true;
-  //   }
-  //   else{
-  //     throw 'some error';
-  //   } 
-  // }
-  // const handleSubmit = async event => {
-  //   event.preventDefault();
-  //   setIsLoading(true);
-  //   try {
-  //     await userLogin({ email, password });
-  //     setIsLoading(false);
-  //     setError('');
-  //     // CompanyPanelView.show();
-
-  //   } catch (error) {
-  //     setError(error);
-  //     setIsLoading(false);
-  //     setEmail('');
-  //     setPassword('');
-  //   }
-  // };
 
   const fetchLogin = (e) => {
     const requestOptions = {
@@ -65,7 +40,6 @@ export default function LoginForm() {
         const data = await response.json();
         console.log("data is ", data)
         if (!response.ok) {
-          //const error = (data && data.message) || response.status;
           const error = (data && data.code);
           return Promise.reject(error);
         }

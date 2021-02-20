@@ -9,15 +9,33 @@ import {
   Flex,
   Box,
   Heading,
+  FormLabel,
   Tabs,
   TabList,
   TabPanels,
   Tab,
   TabPanel,
+  FormControl,
+  Input,
+  InputGroup,
+  InputRightElement,
+  handleClick,
+  Divider,
+  Container,
+  show
 } from '@chakra-ui/react';
+
+
 export default function EmployeeProfile({ employee }) {
   console.log('employee', employee);
   
+  const [showForm, setShowForm] = useState(false);
+  const [title, setTitle] = useState('');
+  const [initDate, setInitDate] = useState('');
+  const [endDate, setEndDate] = useState('');
+  const [description, setDescription] = useState('');
+
+
   const [requests,setRequests] = useState([]);
 
       useEffect(()=>{
@@ -31,7 +49,43 @@ export default function EmployeeProfile({ employee }) {
           console.error('There was an error!', error);
         });
         
-      },[])
+       },[requests])
+
+      const requestHoliday = (e) => {
+        const requestOptions = {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ 
+            initDate: initDate, 
+            endDate: endDate,
+            type: "holidays",
+            status: "open",
+            description: description,
+            title: title,
+            documentUrl: '',
+            userId: employee.id,
+            companyId: employee.companyId
+
+          })
+        };
+
+        
+        fetch('http://188.166.50.249/hollyday', requestOptions)
+          .then(async response => {
+            const data = await response.json();
+            console.log("data from empoyee form ", data)
+            if (!response.ok) {
+              const error = (data && data.code);
+              return Promise.reject(error);
+            }
+    
+          
+          })
+          .catch(error => {
+            console.error('There was an error!', error);
+          });
+      }
+
   
   return (
     <Box bg="#E2E8F0" flex="1">
@@ -63,7 +117,7 @@ export default function EmployeeProfile({ employee }) {
             src="https://thispersondoesnotexist.com/image"
             alt="Segun Adebayo"
           />
-          <Button w="170px" h="40px" colorScheme="blue" mb="2">
+          <Button w="170px" h="40px" colorScheme="blue" mb="2" onClick={()=>setShowForm(!showForm)}  >
             Holiday Request
           </Button>
         </Box>
@@ -104,7 +158,66 @@ export default function EmployeeProfile({ employee }) {
         
         </Flex>
       </Flex>
+
+      { showForm && 
+
+      <Box p="6">​
+      
+      <Flex direction="row" justify="flex-start" m="3">
+        <FormControl id="title" isRequired width="25%" mr="2">
+          <FormLabel>Title</FormLabel>
+          <Input placeholder="Title" 
+          type="text"
+          value={title}
+          onChange={event => setTitle(event.target.value)}
+          aria-label="Title"
+          />
+        </FormControl>
+        <FormControl id="initDate" isRequired width="25%" mr="2">
+          <FormLabel>Init Date</FormLabel>
+          <Input placeholder="Init Date"
+          type="text"
+          value={initDate}
+          onChange={event => setInitDate(event.target.value)}
+          aria-label="Init Date"
+          />
+        </FormControl>
+
+        <FormControl id="endDate" isRequired width="25%" mr="2">
+          <FormLabel>End Date</FormLabel>
+          <Input placeholder="End Date"
+          type="text"
+          value={endDate}
+          onChange={event => setEndDate(event.target.value)}
+          aria-label="End Date"
+          />
+        </FormControl>
+
+      </Flex>
+      <Flex direction="column">
+        ​
+        <FormControl id="description" isRequired>
+          <FormLabel>Description</FormLabel>
+          <Input placeholder="Description"
+          type="text"
+          value={description}
+          onChange={event => setDescription(event.target.value)}
+          aria-label="Description"
+          />
+        </FormControl>
+        <Flex justify="flex-end">
+          <Button w="170px" h="40px" colorScheme="blue" m="10" onClick={requestHoliday} >
+            Submit
+          </Button>
+        </Flex>
+        ​
+      </Flex>
       ​
+
+      </Box>
+      }
+
+
      <Box d="flex" justifyContent="center" flexDirection="column" alignItems="center">
         {requests && requests.map((request)=>{
             return(
