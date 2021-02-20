@@ -53,12 +53,12 @@ export default function EmployeeProfile({ employee }) {
         <Flex m="2" direction="column" w="20%">
           <Stack justify="space-between" direction="row">
             <Text fontSize="md">First Name:</Text>
-            <Text fontSize="md">{employee.username}</Text>
+            <Text fontSize="md">{employee.firstName}</Text>
           </Stack>
 
           <Stack justify="space-between" direction="row">
             <Text fontSize="md">Last Name:</Text>
-            <Text fontSize="md">{employee.username}</Text>
+            <Text fontSize="md">{employee.lastName}</Text>
           </Stack>
         
       
