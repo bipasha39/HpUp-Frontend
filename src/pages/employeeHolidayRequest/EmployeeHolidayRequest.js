@@ -1,4 +1,4 @@
-import React, { Fragment } from 'react';
+import React, {} from 'react';
 import PanelLeft from '../../components/panelLeft/PanelLeft';
 import EmployeeHoliday from '../../components/employeeHoliday/EmployeeHoliday';
 

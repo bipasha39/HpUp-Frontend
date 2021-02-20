@@ -1,16 +1,11 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { BellIcon } from '@chakra-ui/icons';
 import {
   Text,
   Stack,
-  Container,
   Image,
-  bg,
   Button,
-  ButtonGroup,
-  SimpleGrid,
   Flex,
-  Spacer,
   Box,
   Heading,
   Tabs,
@@ -19,11 +14,12 @@ import {
   Tab,
   TabPanel,
 } from '@chakra-ui/react';
-export default function EmployeeProfile() {
+export default function EmployeeProfile({ employee }) {
+  console.log('employee', employee);
   return (
     <Box bg="#E2E8F0" flex="1">
       ​
-      <Box  display="flex" justifyContent="center">
+      <Box display="flex" justifyContent="center">
         <Box
           display="flex"
           flex="1"
@@ -32,7 +28,7 @@ export default function EmployeeProfile() {
           justifyContent="space-between"
         >
           <Heading color="Black" size="lg" fontSize="50px">
-            John Johnson
+            {/* {employee.name} */}
           </Heading>
           ​
           <Box display="flex" alignItems="center">
@@ -47,7 +43,7 @@ export default function EmployeeProfile() {
             m="2"
             boxSize="150px"
             objectFit="cover"
-            src="https://bit.ly/sage-adebayo"
+            src="https://thispersondoesnotexist.com/image"
             alt="Segun Adebayo"
           />
           <Button w="170px" h="40px" colorScheme="blue" mb="2">
@@ -104,8 +100,8 @@ export default function EmployeeProfile() {
             w="100%"
           >
             <Text>Available Holidays</Text>
-            <p>28 Days</p>
-            <Text>1 Jan 2021 - 31 Dec 2021</Text>
+
+            {/* <Text>{employee.remainingDays}</Text> */}
           </Box>
           ​
           <Box
@@ -133,7 +129,7 @@ export default function EmployeeProfile() {
                 Declined
               </Button>
               <Text>2021-01-01</Text>
-              <Text font-weight="bold">Holiday Request</Text>
+              <Text fontWeight="bold">Holiday Request</Text>
               <Text>I want to take a holiday at 2020-12-23</Text>
               <Text>Response:</Text>
               <Text>
