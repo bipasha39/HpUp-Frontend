@@ -9,7 +9,6 @@ import {
 
 import { ChakraProvider, theme, Box } from '@chakra-ui/react';
 
-import { } from './ColorModeSwitcher';
 import Login from './pages/login/Login';
 import SignUp from "./pages/signUp/SignUp";
 import Remind from "./pages/remind/Remind";
@@ -17,7 +16,7 @@ import CompanyDashboard from './pages/companyDashboard/CompanyDashboard';
 import EmployeeHolidayRequest from './pages/employeeHolidayRequest/EmployeeHolidayRequest';
 import CompanyHolidayApproval from './pages/companyHolidayApproval/CompanyHolidayApproval';
 import EmployeeProfileView from './pages/employeeProfileView/EmployeeProfileView';
-
+import UnderConstruction from './components/underConstruction/UnderConstruction';
 function App() {
   return (
 <Router>
@@ -47,6 +46,18 @@ function App() {
           </Route>
           <Route path ="/profile">
             <EmployeeProfileView />
+          </Route>
+          <Route path="/talent">
+              <UnderConstruction />
+          </Route>
+          <Route path="/payroll">
+              <UnderConstruction />
+          </Route>
+          <Route path="/settings">
+              <UnderConstruction />
+          </Route>
+          <Route path="/logout">
+              <UnderConstruction />
           </Route>
           
         </Switch>
