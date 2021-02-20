@@ -63,7 +63,7 @@ export default function LoginForm() {
     fetch('http://188.166.50.249/login', requestOptions)
       .then(async response => {
         const data = await response.json();
-
+        console.log("data is ", data)
         if (!response.ok) {
           //const error = (data && data.message) || response.status;
           const error = (data && data.code);
@@ -74,7 +74,7 @@ export default function LoginForm() {
           history.push('/dashboard');
         }
         if (data.role === "employee") {
-          history.push('/profile');
+          history.push({pathname: '/profile', employee:data})
         }
 
       })
