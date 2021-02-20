@@ -23,11 +23,7 @@ export default function CompanyPanelView() {
     ).catch(error => {
       console.error('There was an error!', error);
     });
-    // getAllUsers().then(value =>{
-    //   console.log("got all users")
-    //   setUsers(value)
-    // })
-    //  console.log("done")
+    
    },[])
 
   return (

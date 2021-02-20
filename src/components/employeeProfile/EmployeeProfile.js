@@ -1,4 +1,5 @@
-import React from 'react';
+import React, {useState, useEffect} from 'react';
+import Moment from 'react-moment';
 import { BellIcon } from '@chakra-ui/icons';
 import {
   Text,
@@ -16,6 +17,22 @@ import {
 } from '@chakra-ui/react';
 export default function EmployeeProfile({ employee }) {
   console.log('employee', employee);
+  
+  const [requests,setRequests] = useState([]);
+
+      useEffect(()=>{
+        fetch(`http://188.166.50.249/users/${employee.id}/requests`).then(
+          async response => {
+            const data = await response.json();
+            setRequests(data);
+            console.log("data", data)
+          }
+        ).catch(error => {
+          console.error('There was an error!', error);
+        });
+        
+      },[])
+  
   return (
     <Box bg="#E2E8F0" flex="1">
       ​
@@ -53,7 +70,7 @@ export default function EmployeeProfile({ employee }) {
         <Flex m="2" direction="column" w="20%">
           <Stack justify="space-between" direction="row">
             <Text fontSize="md">First Name:</Text>
-            <Text fontSize="md">{employee.firstName}</Text>
+            <Text fontSize="md">{employee.firstName && employee.firstName}</Text>
           </Stack>
 
           <Stack justify="space-between" direction="row">
@@ -88,55 +105,30 @@ export default function EmployeeProfile({ employee }) {
         </Flex>
       </Flex>
       ​
-      <Tabs variant="enclosed">
-        <TabList>
-          <Tab>One</Tab>
-          <Tab>Two</Tab>
-        </TabList>
-        <TabPanels>
-          <TabPanel>
-            <Box w="80%" boxShadow="lg" p="6" rounded="md" bg="white">
-              <Button backgroundColor="Red" color="white">
-                Declined
+     <Box d="flex" justifyContent="center" flexDirection="column" alignItems="center">
+        {requests && requests.map((request)=>{
+            return(
+              <Box mb="4" w="80%" boxShadow="lg" p="6" rounded="md" bg="white"> 
+              <Button backgroundColor={ request.status === "open" || request.status === "approved" ? "Green" : "Red"  } color="white">
+               {request.status}
               </Button>
-              <Text>2021-01-01</Text>
+              <Text></Text>
               <Text fontWeight="bold">Holiday Request</Text>
-              <Text>I want to take a holiday at 2020-12-23</Text>
-              <Text>Response:</Text>
+              <Text>Days Requested:</Text>
+              <Text>From <Moment format="DD/MM/YYYY">{request.initDate}</Moment> To <Moment format="DD/MM/YYYY">{request.endDate}</Moment></Text>
+              <Text>Description</Text>
               <Text>
-                Lorem Ipsum is simply dummy text of the printing and typesetting
-                industry. Lorem Ipsum has been the industry's standard dummy
-                text ever since the 1500s, when an unknown printer took a galley
-                of type and scrambled it to make a type specimen book. It has
-                survived not only five centuries, but also the leap into
-                electronic typesetting, remaining essentially unchanged.
+              {request.description}
               </Text>
               ​
-            </Box>
-          </TabPanel>
-          <TabPanel>
-            <Box w="80%" boxShadow="lg" p="6" rounded="md" bg="white">
-              <Button backgroundColor="Green" color="white">
-                Approved
-              </Button>
-              <Text>2021-01-01</Text>
-              <Text font-weight="bold">Holiday Request</Text>
-              <Text>I want to take a holiday at 2020-12-23</Text>
-              <Text>Response:</Text>
-              <Text>
-                Lorem Ipsum is simply dummy text of the printing and typesetting
-                industry. Lorem Ipsum has been the industry's standard dummy
-                text ever since the 1500s, when an unknown printer took a galley
-                of type and scrambled it to make a type specimen book. It has
-                survived not only five centuries, but also the leap into
-                electronic typesetting, remaining essentially unchanged.
-              </Text>
-              ​
-            </Box>
-          </TabPanel>
-        </TabPanels>
-      </Tabs>
-      ​
+              </Box>
+            )
+
+        })} 
+     </Box>
+          ​
+          
+         
     </Box>
   );
 }
