@@ -52,26 +52,16 @@ export default function EmployeeProfile({ employee }) {
         </Box>
         <Flex m="2" direction="column" w="20%">
           <Stack justify="space-between" direction="row">
-            <Text fontSize="md">Name:</Text>
-            <Text fontSize="md">John</Text>
+            <Text fontSize="md">First Name:</Text>
+            <Text fontSize="md">{employee.firstName}</Text>
           </Stack>
 
           <Stack justify="space-between" direction="row">
-            <Text fontSize="md">Second Name:</Text>
-            <Text fontSize="md">Walter</Text>
+            <Text fontSize="md">Last Name:</Text>
+            <Text fontSize="md">{employee.lastName}</Text>
           </Stack>
-          <Stack justify="space-between" direction="row">
-            <Text fontSize="md">Employee Since:</Text>
-            <Text fontSize="md">Address</Text>
-          </Stack>
-          <Stack justify="space-between" direction="row">
-            <Text fontSize="md">Nationality:</Text>
-            <Text fontSize="md">American</Text>
-          </Stack>
-          <Stack justify="space-between" direction="row">
-            <Text fontSize="md">Current Time:</Text>
-            <Text fontSize="md">Spain</Text>
-          </Stack>
+        
+      
         </Flex>
 
         <Flex
@@ -83,37 +73,18 @@ export default function EmployeeProfile({ employee }) {
           w="40%"
           p="5"
         >
+
           <Box
             flex-direction="column"
             justify-content="center"
-            textAlign="left"
-            w="100%"
-          >
-            <Text>Working Hours</Text>
-            <p> 29:04</p>
-            <Text>Feb 12 - Feb 28</Text>
-          </Box>
-          <Box
-            flex-direction="column"
-            justify-content="center"
-            textAlign="left"
+            textAlign="center"
             w="100%"
           >
             <Text>Available Holidays</Text>
-
-            {/* <Text>{employee.remainingDays}</Text> */}
+            <Text>{employee.remainingDays} Remaining Days</Text>
           </Box>
           ​
-          <Box
-            flex-direction="column"
-            justify-content="center"
-            textAlign="left"
-            w="100%"
-          >
-            <Text>Current Salary</Text>
-            <p>358$</p>
-            <Text>1 Jan 2021 - 31 Jan 2021</Text>
-          </Box>
+        
         </Flex>
       </Flex>
       ​
