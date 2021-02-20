@@ -1,4 +1,4 @@
-import React, { } from 'react';
+import React from 'react';
 import { BellIcon } from '@chakra-ui/icons';
 import {
   Text,
@@ -14,8 +14,8 @@ import {
   Tab,
   TabPanel,
 } from '@chakra-ui/react';
-export default function EmployeeProfile({employee}) {
-  console.log("employee",employee)
+export default function EmployeeProfile({ employee }) {
+  console.log('employee', employee);
   return (
     <Box bg="#E2E8F0" flex="1">
       ​
@@ -28,7 +28,7 @@ export default function EmployeeProfile({employee}) {
           justifyContent="space-between"
         >
           <Heading color="Black" size="lg" fontSize="50px">
-            {employee.name}
+            {/* {employee.name} */}
           </Heading>
           ​
           <Box display="flex" alignItems="center">
@@ -43,7 +43,7 @@ export default function EmployeeProfile({employee}) {
             m="2"
             boxSize="150px"
             objectFit="cover"
-            src="https://bit.ly/sage-adebayo"
+            src="https://thispersondoesnotexist.com/image"
             alt="Segun Adebayo"
           />
           <Button w="170px" h="40px" colorScheme="blue" mb="2">
@@ -100,8 +100,8 @@ export default function EmployeeProfile({employee}) {
             w="100%"
           >
             <Text>Available Holidays</Text>
-            
-            <Text>{employee.remainingDays}</Text>
+
+            {/* <Text>{employee.remainingDays}</Text> */}
           </Box>
           ​
           <Box
