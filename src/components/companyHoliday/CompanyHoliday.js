@@ -1,6 +1,5 @@
 import React, {useState, useEffect} from 'react';
 import Moment from 'react-moment';
-import { useHistory } from "react-router-dom";
 import {
   Text,
   Stack,
@@ -11,9 +10,9 @@ import {
   Heading
 } from '@chakra-ui/react';
 
-export default function CompanyHoliday() {
-  const history = useHistory();
-  const employer = history.location.employer;  
+export default function CompanyHoliday({employer}) {
+  console.log('emplyer in company holiday', employer)
+
 
   const [requests,setRequests] = useState([]);
 
@@ -28,7 +27,7 @@ export default function CompanyHoliday() {
           console.error('There was an error!', error);
         });
         
-       },[requests])
+       },[])
 
 
   return (

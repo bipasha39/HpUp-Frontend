@@ -38,8 +38,10 @@ const MenuItem = props => (
 
 const MenuHolidayItem = (props) =>{
   const history = useHistory();
+  console.log("employer from menu item__", props.employer) 
+
   return (
-  <Box p="2" d="flex" alignItems="center" as={Link} to={props.route} onClick={()=> history.push({pathname:'/dashboard', employer:props.employer})}>
+  <Box p="2" d="flex" alignItems="center" onClick={()=> history.push({pathname:'/holidaycom', employer:props.employer})}>
     {props.icon}
     <Text ml="4" >
     {props.title}
