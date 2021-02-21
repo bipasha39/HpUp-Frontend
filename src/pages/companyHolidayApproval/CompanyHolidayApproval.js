@@ -8,7 +8,6 @@ import { useHistory } from "react-router-dom";
 export default function CompanyHolidayApproval() {
   const history = useHistory();
   const employer = history.location.employer;  
-  console.log("employer in company hliday aprroval", employer)
   return (
       <Box display="flex"  >
         <PanelLeft />

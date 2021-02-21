@@ -161,7 +161,7 @@ export default function EmployeeProfile({ employee }) {
 
       { showForm && 
 
-      <Box p="6">​
+      <Box p="6" mb="4" boxShadow="lg" p="6" rounded="md" bg="white">​
       
       <Flex direction="row" justify="flex-start" m="3">
         <FormControl id="title" isRequired width="25%" mr="2">
