@@ -1,6 +1,6 @@
 import React, { } from 'react';
 import { Box, Divider, Heading, Avatar,Text } from '@chakra-ui/react';
-import { Link } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
 import {
   DragHandleIcon,
   EmailIcon,
@@ -14,10 +14,10 @@ import {
 } from '@chakra-ui/icons';
 
 
-const MenuList = () => (
+const MenuList = ({employer}) => (
   <Box display="flex" flexDirection="column" flex="1" p="10px">
     <MenuItem icon={<DragHandleIcon />} route="/dashboard" title="Dashboard" />
-    <MenuItem icon={<UpDownIcon />} route="/holidaycom" title="Holidays" />
+    <MenuHolidayItem icon={<UpDownIcon />} employer={employer} route="/holidaycom" title="Holidays" />
     <MenuItem icon={<InfoOutlineIcon />}  route ="/payroll"title="Payroll" />
     <MenuItem icon={<ChatIcon />}  route ="/talent" title="Talent Acusition Team" />
     <Divider />
@@ -36,6 +36,19 @@ const MenuItem = props => (
   </Box>
 );
 
+const MenuHolidayItem = (props) =>{
+  const history = useHistory();
+  return (
+  <Box p="2" d="flex" alignItems="center" as={Link} to={props.route} onClick={()=> history.push({pathname:'/dashboard', employer:props.employer})}>
+    {props.icon}
+    <Text ml="4" >
+    {props.title}
+    </Text>
+    
+  </Box>
+
+)};
+
 const Profile = () => (
   <Box p="4" mb="4" flexDirection="row" display="flex">
     <Box mr="4" pl="2">
@@ -53,12 +66,13 @@ const Header = () => (
   </Heading>
 );
 
-export default function PanelLeft() {
+export default function PanelLeft({employer}) {
+  console.log("employer from panel left", employer) 
   return (
     <Box pl="2" pr="2"display="flex" flexDirection="column" width="350px" height="100vh">
       <Header />
       <Profile />
-      <MenuList />
+      <MenuList employer={employer} />
       
     </Box>
   );

@@ -45,7 +45,7 @@ export default function LoginForm() {
         }
 
         if (data.role === "employer") {
-          history.push('/dashboard');
+          history.push({pathname:'/dashboard', employer:data});
         }
         if (data.role === "employee") {
           history.push({pathname: '/profile', employee:data})
