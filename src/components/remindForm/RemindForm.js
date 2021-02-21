@@ -11,7 +11,7 @@ import {
   Container,
   Text,
 } from '@chakra-ui/react';
-import { Link } from 'react-router-dom';
+// import { Link } from 'react-router-dom';
 
 import ErrorMessage from '../ErrorMessage';
 import { remindPassword } from '../../utils/mockApi';
