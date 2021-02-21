@@ -66,11 +66,13 @@ export default function LoginForm() {
         textAlign="center"
         textTransform="uppercase"
         letterSpacing={2}
+        color="#192A3E"
+        
       >
         Login
       </Heading>
 
-      <form action="submit">
+      <form action="submit" >
         <Stack spacing={4}>
           {error && <ErrorMessage message={error} />}
           <FormControl isRequired>
@@ -81,6 +83,8 @@ export default function LoginForm() {
                 onChange={event => setUsername(event.target.value)}
                 placeholder="User name"
                 aria-label="User name"
+                bg="#192A3E"
+                color="White"
               />
             </InputGroup>
           </FormControl>
@@ -93,10 +97,12 @@ export default function LoginForm() {
                 type="password"
                 placeholder="Password"
                 aria-label="Password"
+                bg="#192A3E"
+                color="White"
               />
 
               <InputRightElement width="4.5rem">
-                <Button h="1.75rem" size="sm" onClick={handleClick}>
+                <Button h="1.75rem" size="sm" onClick={handleClick} >
                   {show ? 'Hide' : 'Show'}
                 </Button>
               </InputRightElement>
@@ -108,10 +114,10 @@ export default function LoginForm() {
       </form>
       <Box display="flex" p="4" justifyContent="space-between">
         <Link to="/remind" >
-          Forget password ?
+          <Box borderRadius="2%" bg="White">Forget password ?</Box>
         </Link>
 
-        <Button isLoading={isLoading} colorScheme="blue" size="lg" variant="solid" onClick={fetchLogin}>
+        <Button isLoading={isLoading} colorScheme="blue" size="lg" variant="solid" onClick={fetchLogin} bg="#192A3E">
           Login
         </Button>
       </Box>

@@ -73,7 +73,7 @@ export default function SignUpForm() {
       });
   }
   return (
-    <Container>
+    <Container className="bodysignup">
       <Heading
         as="h1"
         textAlign="center"
@@ -94,6 +94,8 @@ export default function SignUpForm() {
                 type="name"
                 placeholder="First Name"
                 aria-label="First Name"
+                bg="#192A3E"
+                color="White"
               />
             </InputGroup>
           </FormControl>
@@ -106,6 +108,8 @@ export default function SignUpForm() {
                 type="name"
                 placeholder=" Last Name"
                 aria-label=" Last Name"
+                bg="#192A3E"
+                color="White"
               />
             </InputGroup>
           </FormControl>
@@ -119,15 +123,19 @@ export default function SignUpForm() {
                 type="name"
                 placeholder="Company Name"
                 aria-label="Company Name"
+                bg="#192A3E"
+                color="White"
               />
             </InputGroup>
           </FormControl>
           <FormControl isRequired>
-            <FormLabel>Role</FormLabel>
+            <FormLabel color="White" >Role</FormLabel>
             <Select
               placeholder="Role"
               value={role}
               onChange={event => setRole(event.target.value)}
+              bg="#192A3E"
+              color="Darkgrey"
             >
               <option value="employer">Employer</option>
               <option value="employee">Employee</option>
@@ -142,6 +150,8 @@ export default function SignUpForm() {
                 onChange={event => setEmail(event.target.value)}
                 placeholder="Email"
                 aria-label="Email"
+                bg="#192A3E"
+                color="White"
               />
             </InputGroup>
           </FormControl>
@@ -155,6 +165,8 @@ export default function SignUpForm() {
                 type="password"
                 placeholder="Password"
                 aria-label="Password"
+                bg="#192A3E"
+                color="White"
               />
 
               <InputRightElement width="4.5rem">
@@ -174,6 +186,8 @@ export default function SignUpForm() {
           size="lg"
           variant="solid"
           onClick={fetchSignup}
+          bg="#192A3E"
+          color="White"
         >
           SignUp
         </Button>

@@ -38,16 +38,18 @@ export default function LoginForm() {
     <Container>
       <Heading
         as="h1"
-        textTransform="uppercase"
+        
         letterSpacing={2}
         size="xl"
         isTruncated
+        color="#192A3E"
+        textAlign="center"
+        mb="4"
+        
       >
-        Remind Password
+        Reset Password
       </Heading>
-      <Text fontSize="xl">
-        Just put your email here, we will send your password to you
-      </Text>
+      
 
       <form action="submit">
         <Stack spacing={4}>
@@ -60,6 +62,8 @@ export default function LoginForm() {
                 onChange={event => setEmail(event.target.value)}
                 placeholder="Email"
                 aria-label="Email"
+                bg="#192A3E"
+                color="white"
               />
             </InputGroup>
           </FormControl>
@@ -73,6 +77,7 @@ export default function LoginForm() {
           size="lg"
           variant="solid"
           onClick={handleSubmit}
+          bg="#192A3E"
         >
           Send me my password
         </Button>

@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { Link, useHistory } from 'react-router-dom';
 import Moment from 'react-moment';
 import {
   Text,
@@ -34,6 +35,7 @@ export default function CompanyHoliday({ employer }) {
       method: 'PATCH',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
+      
         initDate: "2021-02-13 17:50:37",
         endDate: "2021-02-13 17:50:37",
         type: "holidays",
@@ -63,14 +65,14 @@ export default function CompanyHoliday({ employer }) {
 
   return (
 
-    <Box d="flex" justifyContent="flex-start" flexDirection="column" bg="#E2E8F0" flex="1" alignItems="center" >
+    <Box d="flex" justifyContent="flex-start" flexDirection="column" bg="#E2E8F0" flex="1" alignItems="center" bg="#192A3E" >
 
       <Box mb="8" mt="8"  >
-        <Heading as="h2" size="2xl">
+        <Heading as="h2" size="2xl" color="white" >
           Holidays requests
               </Heading>
       </Box>
-      <Box d="flex" justifyContent="center" flexDirection="column" alignItems="center">
+      <Box d="flex" justifyContent="center" flexDirection="column" alignItems="center" >
         {requests && requests.map((request) => {
           return (
 
