@@ -20,6 +20,7 @@ import UnderConstruction from './components/underConstruction/UnderConstruction'
 function App() {
   return (
 <Router>
+  
 <ChakraProvider theme={theme}>
       <Box minH="100vh" display="flex" flexDirection="column">  
         <Switch>
