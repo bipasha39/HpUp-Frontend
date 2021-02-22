@@ -48,8 +48,8 @@ export default function Dashboard(props) {
           </MenuButton>
           <MenuList>
             <MenuItem>All</MenuItem>
-            <MenuItem>Name</MenuItem>
-            <MenuItem>Role</MenuItem>
+            <MenuItem>Employer</MenuItem>
+            <MenuItem>Employee</MenuItem>
             <MenuItem>Activity</MenuItem>
             <MenuItem>Attend a Workshop</MenuItem>
           </MenuList>

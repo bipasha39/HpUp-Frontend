@@ -61,6 +61,7 @@ export default function LoginForm() {
 
   return (
     <Container>
+      <Box p="6" mb="4" mt="4" w="80%" ml="auto" mr="auto" boxShadow="lg" p="6" rounded="md" bg="white">
       <Heading
         as="h1"
         textAlign="center"
@@ -72,7 +73,7 @@ export default function LoginForm() {
         Login
       </Heading>
 
-      <form action="submit" >
+      <form action="submit"  >
         <Stack spacing={4}>
           {error && <ErrorMessage message={error} />}
           <FormControl isRequired>
@@ -83,8 +84,7 @@ export default function LoginForm() {
                 onChange={event => setUsername(event.target.value)}
                 placeholder="User name"
                 aria-label="User name"
-                bg="#192A3E"
-                color="White"
+              
               />
             </InputGroup>
           </FormControl>
@@ -97,8 +97,7 @@ export default function LoginForm() {
                 type="password"
                 placeholder="Password"
                 aria-label="Password"
-                bg="#192A3E"
-                color="White"
+                
               />
 
               <InputRightElement width="4.5rem">
@@ -117,9 +116,10 @@ export default function LoginForm() {
           <Box borderRadius="2%" bg="White">Forget password ?</Box>
         </Link>
 
-        <Button isLoading={isLoading} colorScheme="blue" size="lg" variant="solid" onClick={fetchLogin} bg="#192A3E">
+        <Button isLoading={isLoading} colorScheme="blue" size="md" variant="solid" onClick={fetchLogin} bg="#192A3E">
           Login
         </Button>
+      </Box>
       </Box>
     </Container>
   );

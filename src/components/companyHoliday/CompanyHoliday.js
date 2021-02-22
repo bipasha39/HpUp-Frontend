@@ -79,6 +79,8 @@ export default function CompanyHoliday({ employer }) {
             <Box mb="4" w="80%" boxShadow="lg" p="6" rounded="md" bg="white">
               <Text>{request.createdAt.slice(0, 10)}</Text>
               <Text>STATUS: {request.status}</Text>
+              <Text>Name: {request.user.firstName} {request.user.lastName}</Text>
+              
               <Text>Holiday Request</Text>
               <Text>{request.title}</Text>
               <Text>{request.description}</Text>

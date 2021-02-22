@@ -74,7 +74,11 @@ export default function SignUpForm() {
   }
   return (
     <Container className="bodysignup">
-      <Heading
+      
+      <form action="submit">
+        {error && <ErrorMessage message={error} />}
+        <Stack spacing={4} p="6" mb="4" mt="4" w="80%" ml="auto" mr="auto" boxShadow="lg" p="6" rounded="md" bg="white">
+        <Heading
         as="h1"
         textAlign="center"
         textTransform="uppercase"
@@ -82,9 +86,6 @@ export default function SignUpForm() {
       >
         Sign Up
       </Heading>
-      <form action="submit">
-        {error && <ErrorMessage message={error} />}
-        <Stack spacing={4}>
           <FormControl isRequired>
             <FormLabel>First Name</FormLabel>
             <InputGroup>
@@ -94,8 +95,7 @@ export default function SignUpForm() {
                 type="name"
                 placeholder="First Name"
                 aria-label="First Name"
-                bg="#192A3E"
-                color="White"
+                
               />
             </InputGroup>
           </FormControl>
@@ -108,8 +108,7 @@ export default function SignUpForm() {
                 type="name"
                 placeholder=" Last Name"
                 aria-label=" Last Name"
-                bg="#192A3E"
-                color="White"
+                
               />
             </InputGroup>
           </FormControl>
@@ -123,19 +122,17 @@ export default function SignUpForm() {
                 type="name"
                 placeholder="Company Name"
                 aria-label="Company Name"
-                bg="#192A3E"
-                color="White"
+               
               />
             </InputGroup>
           </FormControl>
           <FormControl isRequired>
-            <FormLabel color="White" >Role</FormLabel>
+            <FormLabel color="Black" >Role</FormLabel>
             <Select
               placeholder="Role"
               value={role}
               onChange={event => setRole(event.target.value)}
-              bg="#192A3E"
-              color="Darkgrey"
+             
             >
               <option value="employer">Employer</option>
               <option value="employee">Employee</option>
@@ -150,8 +147,7 @@ export default function SignUpForm() {
                 onChange={event => setEmail(event.target.value)}
                 placeholder="Email"
                 aria-label="Email"
-                bg="#192A3E"
-                color="White"
+               
               />
             </InputGroup>
           </FormControl>
@@ -165,8 +161,7 @@ export default function SignUpForm() {
                 type="password"
                 placeholder="Password"
                 aria-label="Password"
-                bg="#192A3E"
-                color="White"
+                
               />
 
               <InputRightElement width="4.5rem">
@@ -176,14 +171,13 @@ export default function SignUpForm() {
               </InputRightElement>
             </InputGroup>
           </FormControl>
-        </Stack>
-        <Divider />
-      </form>
-      <Box display="flex" p="4" justifyContent="center">
-        <Button
+          <Box display="flex" justifyContent="center">
+          <Button
           isLoading={isLoading}
           colorScheme="blue"
-          size="lg"
+          
+          w="50%"
+          size="md"
           variant="solid"
           onClick={fetchSignup}
           bg="#192A3E"
@@ -191,6 +185,12 @@ export default function SignUpForm() {
         >
           SignUp
         </Button>
+        </Box>
+        </Stack>
+        <Divider />
+      </form>
+      <Box display="flex" p="4" justifyContent="center">
+        
       </Box>
     </Container>
   );
