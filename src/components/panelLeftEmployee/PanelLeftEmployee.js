@@ -17,7 +17,7 @@ import {
 const MenuList = ({employer}) => (
   <Box display="flex" flexDirection="column" flex="1" p="10px" boxShadow="dark-lg" p="6" rounded="md" bg="Azure">
     <MenuItem icon={<DragHandleIcon />} route="/dashboard" title="My Profile" />
-    <MenuHolidayItem icon={<UpDownIcon />} employer={employer} route="/holidaycom" title="Holidays" />
+    {employer &&  <MenuHolidayItem icon={<UpDownIcon />} employer={employer} route="/holidaycom" title="Holidays" />}
     <MenuItem icon={<InfoOutlineIcon />}  route ="/payroll"title=" Payroll" />
     <MenuItem icon={<ChatIcon />}  route ="/talent" title="Team" />
     <Divider />

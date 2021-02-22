@@ -65,14 +65,14 @@ export default function CompanyHoliday({ employer }) {
 
   return (
 
-    <Box d="flex" justifyContent="flex-start" flexDirection="column" bg="#E2E8F0" flex="1" alignItems="center" bg="#192A3E" >
+    <Box d="flex" justifyContent="flex-start" flexDirection="column" bg="#E2E8F0" flex="1" alignItems="center" bg="#192A3E" w="100%">
 
       <Box mb="8" mt="8"  >
         <Heading as="h2" size="2xl" color="white" >
           Holidays requests
               </Heading>
       </Box>
-      <Box d="flex" justifyContent="center" flexDirection="column" alignItems="center" >
+      <Box d="flex" justifyContent="center" flexDirection="column" alignItems="center" w="100%">
         {requests && requests.map((request) => {
           return (
 

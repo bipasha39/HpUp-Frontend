@@ -64,7 +64,7 @@ export default function Dashboard(props) {
               <Th color="black">Last Name</Th>
               <Th color="black">Email</Th>
               <Th color="black">Role</Th>
-              <Th color="black">Company</Th>
+              
               <Th isNumeric color="black">Remaining days</Th>
             </Tr>
           </Thead>
@@ -87,10 +87,10 @@ export default function Dashboard(props) {
                   </Box>
                 </Td>
                 <Td>{item.firstName}</Td>
-                <Td>{item.lasName}</Td>
+                <Td>{item.lastName}</Td>
                 <Td>{item.email}</Td>
                 <Td>{item.role}</Td>
-                <Td>{item.company}</Td>
+                
 
                 <Td isNumeric>{item.remainingDays}</Td>
               </Tr>
