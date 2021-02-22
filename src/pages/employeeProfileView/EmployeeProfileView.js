@@ -1,6 +1,6 @@
 import React, { useState,useEffect } from 'react';
 import { useHistory } from "react-router-dom";
-import PanelLeft from '../../components/panelLeft/PanelLeft';
+import PanelLeftEmployee from '../../components/panelLeftEmployee/PanelLeftEmployee';
 import EmployeeProfile from '../../components/employeeProfile/EmployeeProfile';
 
 
@@ -12,7 +12,7 @@ export default function EmployeeProfileView() {
   const employee = history.location.employee;  
   return (
       <Box display="flex"  >
-        <PanelLeft />
+        <PanelLeftEmployee />
         <EmployeeProfile employee={employee} />
       </Box>
    
