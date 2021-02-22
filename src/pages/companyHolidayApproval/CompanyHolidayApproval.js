@@ -10,7 +10,7 @@ export default function CompanyHolidayApproval() {
   const employer = history.location.employer;  
   return (
       <Box display="flex"  >
-        <PanelLeft />
+        <PanelLeft employer={employer}/>
         <CompanyHoliday employer={employer}/>
       </Box>
    

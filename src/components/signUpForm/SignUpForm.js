@@ -24,7 +24,7 @@ import ErrorMessage from '../ErrorMessage';
 export default function SignUpForm() {
   const [firstName, setFirstName] = useState('');
   const [lastName, setLastName] = useState('');
-  const [company, setCompany] = useState('');
+  const [username, setUsername] = useState('');
   const [role, setRole] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -39,6 +39,7 @@ export default function SignUpForm() {
       body: JSON.stringify({ 
         firstName: firstName,
         lastName:lastName, 
+        username:username,
         password: password,
         basedCountry: "USA",
         role: role,
@@ -114,13 +115,13 @@ export default function SignUpForm() {
           </FormControl>
 
           <FormControl >
-            <FormLabel>Company Name</FormLabel>
+            <FormLabel>Username</FormLabel>
             <InputGroup>
               <Input
-                value={company}
-                onChange={event => setCompany(event.target.value)}
+                value={username}
+                onChange={event => setUsername(event.target.value)}
                 type="name"
-                placeholder="Company Name"
+                placeholder="Username"
                 aria-label="Company Name"
                
               />

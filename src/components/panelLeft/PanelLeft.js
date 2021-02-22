@@ -16,7 +16,8 @@ import {
 
 const MenuList = ({employer}) => (
   <Box display="flex" flexDirection="column" flex="1" p="10px" boxShadow="dark-lg" p="6" rounded="md" bg="Azure">
-    <MenuItem icon={<DragHandleIcon />} route="/dashboard" title="Dashboard" />
+   
+    <MenuHolidayItem icon={<DragHandleIcon />} employer={employer} route="/dashboard" title="Dashboard" />
     <MenuHolidayItem icon={<UpDownIcon />} employer={employer} route="/holidaycom" title="Holidays" />
     <MenuItem icon={<InfoOutlineIcon />}  route ="/payroll"title="Payroll" />
     <MenuItem icon={<ChatIcon />}  route ="/talent" title="Talent Acusition Team" />
@@ -41,7 +42,7 @@ const MenuHolidayItem = (props) =>{
   console.log("employer from menu item__", props.employer) 
 
   return (
-  <Box p="2" d="flex" alignItems="center" onClick={()=> history.push({pathname:'/holidaycom', employer:props.employer})}>
+  <Box p="2" d="flex" alignItems="center" onClick={()=> history.push({pathname:props.route, employer:props.employer})}>
     {props.icon}
     <Text ml="4" >
     {props.title}

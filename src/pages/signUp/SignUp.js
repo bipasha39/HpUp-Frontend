@@ -9,7 +9,7 @@ export default function SignUp() {
   return (
     <Fragment>
       <Header />
-      <Box display="flex" flex="2" alignItems="center" justifyContent="center" className="bodysign">
+      <Box display="flex"  flex="2" alignItems="center" justifyContent="center" className="bodysign">
         <SignUpForm />
       </Box>
     </Fragment>
