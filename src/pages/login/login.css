@@ -3,3 +3,13 @@ position: absolute;
 top: 0;
 
 }
+
+
+.bodyform{
+    
+    background-image:url("https://wallpaperaccess.com/full/4542406.jpg") ;
+
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}

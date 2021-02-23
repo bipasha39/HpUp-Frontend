@@ -24,7 +24,7 @@ import ErrorMessage from '../ErrorMessage';
 export default function SignUpForm() {
   const [firstName, setFirstName] = useState('');
   const [lastName, setLastName] = useState('');
-  const [company, setCompany] = useState('');
+  const [username, setUsername] = useState('');
   const [role, setRole] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -39,6 +39,7 @@ export default function SignUpForm() {
       body: JSON.stringify({ 
         firstName: firstName,
         lastName:lastName, 
+        username:username,
         password: password,
         basedCountry: "USA",
         role: role,
@@ -73,8 +74,12 @@ export default function SignUpForm() {
       });
   }
   return (
-    <Container>
-      <Heading
+    <Container className="bodysignup">
+      
+      <form action="submit">
+        {error && <ErrorMessage message={error} />}
+        <Stack spacing={4} p="6" mb="4" mt="4" w="80%" ml="auto" mr="auto" boxShadow="lg" p="6" rounded="md" bg="white">
+        <Heading
         as="h1"
         textAlign="center"
         textTransform="uppercase"
@@ -82,9 +87,6 @@ export default function SignUpForm() {
       >
         Sign Up
       </Heading>
-      <form action="submit">
-        {error && <ErrorMessage message={error} />}
-        <Stack spacing={4}>
           <FormControl isRequired>
             <FormLabel>First Name</FormLabel>
             <InputGroup>
@@ -94,6 +96,7 @@ export default function SignUpForm() {
                 type="name"
                 placeholder="First Name"
                 aria-label="First Name"
+                
               />
             </InputGroup>
           </FormControl>
@@ -106,28 +109,31 @@ export default function SignUpForm() {
                 type="name"
                 placeholder=" Last Name"
                 aria-label=" Last Name"
+                
               />
             </InputGroup>
           </FormControl>
 
           <FormControl >
-            <FormLabel>Company Name</FormLabel>
+            <FormLabel>Username</FormLabel>
             <InputGroup>
               <Input
-                value={company}
-                onChange={event => setCompany(event.target.value)}
+                value={username}
+                onChange={event => setUsername(event.target.value)}
                 type="name"
-                placeholder="Company Name"
+                placeholder="Username"
                 aria-label="Company Name"
+               
               />
             </InputGroup>
           </FormControl>
           <FormControl isRequired>
-            <FormLabel>Role</FormLabel>
+            <FormLabel color="Black" >Role</FormLabel>
             <Select
               placeholder="Role"
               value={role}
               onChange={event => setRole(event.target.value)}
+             
             >
               <option value="employer">Employer</option>
               <option value="employee">Employee</option>
@@ -142,6 +148,7 @@ export default function SignUpForm() {
                 onChange={event => setEmail(event.target.value)}
                 placeholder="Email"
                 aria-label="Email"
+               
               />
             </InputGroup>
           </FormControl>
@@ -155,6 +162,7 @@ export default function SignUpForm() {
                 type="password"
                 placeholder="Password"
                 aria-label="Password"
+                
               />
 
               <InputRightElement width="4.5rem">
@@ -164,19 +172,26 @@ export default function SignUpForm() {
               </InputRightElement>
             </InputGroup>
           </FormControl>
+          <Box display="flex" justifyContent="center">
+          <Button
+          isLoading={isLoading}
+          colorScheme="blue"
+          
+          w="50%"
+          size="md"
+          variant="solid"
+          onClick={fetchSignup}
+          bg="#192A3E"
+          color="White"
+        >
+          SignUp
+        </Button>
+        </Box>
         </Stack>
         <Divider />
       </form>
       <Box display="flex" p="4" justifyContent="center">
-        <Button
-          isLoading={isLoading}
-          colorScheme="blue"
-          size="lg"
-          variant="solid"
-          onClick={fetchSignup}
-        >
-          SignUp
-        </Button>
+        
       </Box>
     </Container>
   );
